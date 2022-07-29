@@ -1,0 +1,57 @@
+version: "3.0"
+networks:
+  boiler-api-network:
+    driver: bridge
+
+volumes:
+  db-mysql-data: {}
+
+services:
+  boiler-api-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 450M
+    depends_on:
+      - boiler-database
+
+    command: ["/bin/bash"]
+
+    volumes:
+      - .:/application
+    #   - /application/node_modules
+
+    env_file:
+      - docker.env
+    networks:
+      - boiler-api-network
+  boiler-database:
+    image: mysql
+    restart: always
+
+    volumes:
+      - db-mysql-data:/var/lib/mysql
+
+    command:
+      [
+        "--character-set-server=utf8mb4",
+        "--collation-server=utf8mb4_unicode_ci",
+        "--default-authentication-plugin=mysql_native_password",
+        "--sql-mode=0",
+      ]
+
+    environment:
+      MYSQL_ROOT_PASSWORD: pwroot
+      MYSQL_DATABASE: application
+      MYSQL_USER: development
+      MYSQL_PASSWORD: pwdevelopment
+
+    networks:
+      - boiler-api-network
+    ports:
+      - "3306:3306"
