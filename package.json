@@ -4,5 +4,8 @@
   "private": true,
   "workspaces": [
     "workspaces/*"
-  ]
+  ],
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }
