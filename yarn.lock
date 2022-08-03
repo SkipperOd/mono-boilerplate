@@ -4971,6 +4971,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"models@workspace:packages/models":
+  version: 0.0.0-use.local
+  resolution: "models@workspace:packages/models"
+  dependencies:
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
 "ms@npm:2.0.0":
   version: 2.0.0
   resolution: "ms@npm:2.0.0"

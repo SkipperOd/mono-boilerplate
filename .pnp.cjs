@@ -21,6 +21,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."\
       },\
       {\
+        "name": "models",\
+        "reference": "workspace:packages/models"\
+      },\
+      {\
         "name": "api",\
         "reference": "workspace:workspaces/api"\
       }\
@@ -29,7 +33,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
       ["api", ["workspace:workspaces/api"]],\
-      ["application", ["workspace:."]]\
+      ["application", ["workspace:."]],\
+      ["models", ["workspace:packages/models"]]\
     ],\
     "fallbackPool": [\
     ],\
@@ -6315,6 +6320,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["mkdirp", "npm:1.0.4"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["models", [\
+        ["workspace:packages/models", {\
+          "packageLocation": "./packages/models/",\
+          "packageDependencies": [\
+            ["models", "workspace:packages/models"],\
+            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["ms", [\
