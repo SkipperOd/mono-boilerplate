@@ -30,6 +30,8 @@ services:
       - docker.env
     networks:
       - boiler-api-network
+    ports:
+      - "3000:3000"
   boiler-database:
     image: mysql
     restart: always
