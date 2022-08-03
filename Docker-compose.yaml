@@ -1,13 +1,13 @@
 version: "3.0"
 networks:
-  boiler-api-network:
+  mono-boiler-api-network:
     driver: bridge
 
 volumes:
   db-mysql-data: {}
 
 services:
-  boiler-api-app:
+  mono-boiler-api-app:
     build:
       context: .
       dockerfile: Dockerfile
@@ -18,7 +18,7 @@ services:
         limits:
           memory: 450M
     depends_on:
-      - boiler-database
+      - mono-boiler-database
 
     command: ["/bin/bash"]
 
@@ -29,10 +29,10 @@ services:
     env_file:
       - docker.env
     networks:
-      - boiler-api-network
+      - mono-boiler-api-network
     ports:
       - "3000:3000"
-  boiler-database:
+  mono-boiler-database:
     image: mysql
     restart: always
 
@@ -54,6 +54,6 @@ services:
       MYSQL_PASSWORD: pwdevelopment
 
     networks:
-      - boiler-api-network
+      - mono-boiler-api-network
     ports:
       - "3306:3306"

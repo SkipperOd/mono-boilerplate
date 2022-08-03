@@ -5,5 +5,5 @@ code .
 echo "--- Starting containers ---"
 docker-compose up -d
 
-docker-compose exec boiler-api-app /bin/bash
+docker-compose exec  mono-boiler-api-app /bin/bash
 
