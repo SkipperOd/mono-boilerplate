@@ -2605,6 +2605,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"database@workspace:workspaces/database":
+  version: 0.0.0-use.local
+  resolution: "database@workspace:workspaces/database"
+  dependencies:
+    models: 1.0.0
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
 "debug@npm:2.6.9":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -4971,7 +4980,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"models@workspace:packages/models":
+"models@1.0.0, models@workspace:packages/models":
   version: 0.0.0-use.local
   resolution: "models@workspace:packages/models"
   dependencies:

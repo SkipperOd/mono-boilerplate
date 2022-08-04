@@ -27,6 +27,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "api",\
         "reference": "workspace:workspaces/api"\
+      },\
+      {\
+        "name": "database",\
+        "reference": "workspace:workspaces/database"\
       }\
     ],\
     "enableTopLevelFallback": true,\
@@ -34,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [\
       ["api", ["workspace:workspaces/api"]],\
       ["application", ["workspace:."]],\
+      ["database", ["workspace:workspaces/database"]],\
       ["models", ["workspace:packages/models"]]\
     ],\
     "fallbackPool": [\
@@ -3563,6 +3568,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["which", "npm:2.0.2"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["database", [\
+        ["workspace:workspaces/database", {\
+          "packageLocation": "./workspaces/database/",\
+          "packageDependencies": [\
+            ["database", "workspace:workspaces/database"],\
+            ["models", "workspace:packages/models"],\
+            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["debug", [\
