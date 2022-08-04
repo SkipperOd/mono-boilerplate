@@ -4,11 +4,17 @@
   "packageManager": "yarn@3.2.2",
   "scripts": {
     "build": "rm -rf dist & tsc",
-    "db:update": "ts-node index.ts",
+    "db:update": "ts-node src/index.ts",
     "clean:database": "rm -rf dist"
   },
   "dependencies": {
     "models": "1.0.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.3.7",
     "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.4"
   }
 }

@@ -1,5 +1,3 @@
-import { IBook } from 'models';
-
-export abstract class Book implements IBook {
+export abstract class Book {
   id: number;
 }

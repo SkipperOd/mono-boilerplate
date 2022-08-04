@@ -3,12 +3,17 @@
   "packageManager": "yarn@3.2.2",
   "private": true,
   "scripts": {
-    "clean:packages":"sh scripts/clean_packages.sh"
+    "clean:packages": "sh scripts/clean_packages.sh",
+    "build:packages": "sh scripts/build_packages.sh",
+    "start:dev": "sh scripts/start_development.sh"
   },
   "workspaces": [
     "workspaces/*",
     "packages/*"
   ],
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
   "devDependencies": {
     "typescript": "^4.7.4"
   }

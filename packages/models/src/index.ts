@@ -1,2 +1,1 @@
-export * from 'src/types/user.types';
-export * from 'src/types/book.types';
+export { IUser, IUserCreateDto, IUserUpdateDro } from 'src/types/user.types';
