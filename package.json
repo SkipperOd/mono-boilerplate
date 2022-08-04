@@ -2,8 +2,12 @@
   "name": "application",
   "packageManager": "yarn@3.2.2",
   "private": true,
+  "scripts": {
+    "clean:packages":"sh scripts/clean_packages.sh"
+  },
   "workspaces": [
-    "workspaces/*"
+    "workspaces/*",
+    "packages/*"
   ],
   "devDependencies": {
     "typescript": "^4.7.4"

@@ -1,0 +1,14 @@
+{
+  "name": "models",
+  "version": "1.0.0",
+  "packageManager": "yarn@3.2.2",
+  "main": "dist/src/index",
+  "types": "dist/src/index",
+  "scripts": {
+    "build": "rm -rf dist & tsc",
+    "clean:models": "rm -rf dist"
+  },
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}
